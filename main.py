@@ -242,6 +242,9 @@ if __name__ == '__main__':
                 print("Invalid value for predictor", pred)
                 exit(1)
 
+    if not os.path.exists("./raw_results"):
+        os.mkdir("./raw_results")
+
     allCombinations = ((predName, predictor, datName, data, range(minC*2, maxC*2, 2), True)
                        for (predName, predictor) in listPredictors.items()
                        for (datName, data) in listDataFile.items())
